@@ -15,29 +15,38 @@ const navLinks = [
 function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   
   return (
     <div className="bg-slate-950 text-slate-100 selection:bg-fushia-500/30">
       {/* NavBar */}
       <header className="sticky top-0 z-40 border-b border-white/5">
-        <div>
+        <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
 
           <a href="#" className="flex items-center gap-2 ">
             <Sparkles className="size-5 text-fuchsia-500" />
             <span className="font-bold  tracking-tight">Minha marca</span>
           </a>
 
-          <nav>
-            <ul>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
+          <nav className='hidden md:flex items-center gap-6 text-sm'>
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} 
+              className='hover:text-fuchsia-300 transition'>
+                {link.label}
+              </a>
+            ))}
           </nav>
 
+          <button className='md:hidden p-2 rounded-lg' onClick={() => setOpen(true)}>
+            <Menu className='size-5'/>
+          </button>
+
         </div>
+        {open && (
+          <div className='md:hidden'>
+            <p>menu</p>
+          </div>
+        )}
       </header>
     </div>
   )
