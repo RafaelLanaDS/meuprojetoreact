@@ -71,6 +71,7 @@ function App() {
       {/* HERO */}
       <section className='relative overflow-hidden'>
         <div className='mx-auto max-w-6xl px-4 py-20 relative'>
+
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y:0 }} 
@@ -79,6 +80,7 @@ function App() {
           >
             Acelere  sua presença online com uma landing  <span className='bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-violet-300'>simples e eficaz </span>
           </motion.h1>
+
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y:0 }} 
@@ -100,6 +102,29 @@ function App() {
             <a href="#" className='inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 font-medium borde-white/10 hover:bg-white/5  transition'> 
               Ver Recursos
             </a>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }} 
+            animate={{ opacity: 1, y:0 }} 
+            transition={{ duration: .5, delay: 1}}
+            className='mt-14 grid grid-cols-3 gap-4'
+          >
+            {["Velocidade", "Segurança", "Conversão"].map((label, i) => (
+              <div key={label} className='rounded-2xl border border-white/10 bg-white/[0.02] p-6'>
+                <div className='flex items-center gap-3'>
+                  {i == 0 && <Zap className='size-5 text-emeral-4'/>}
+                  {i == 1 && <Shield className='size-5 text-sky-4'/>}
+                  {i == 2 && <Star className='size-5 text-amber-4'/>}
+                  <div className='font-semibold'>
+                    {label}
+                  </div>
+                </div>
+                <p className='text-sm text-slate-400 mt-2'>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt eveniet explicabo veniam consequatur odio similique odit vel.
+                </p>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
