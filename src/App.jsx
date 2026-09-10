@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="bg-slate-950 text-slate-100 selection:bg-fushia-500/30">
       {/* NavBar */}
-      <header className="sticky top-0 z-40 border-b border-white/5">
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-[#020618]">
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
 
           <a href="#" className="flex items-center gap-2 ">
